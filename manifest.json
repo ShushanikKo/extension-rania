@@ -1,0 +1,39 @@
+{
+  "name": "Rania Extension",
+  "description": "Demonstrates the automated steps for Rania",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "alarms",
+    "notifications",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Run Tests",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    "sound.mp3"
+  ],
+  "icons": {
+    "16": "./images/get_started16.png",
+    "32": "./images/get_started32.png",
+    "48": "./images/get_started48.png",
+    "128": "./images/get_started128.png"
+  },
+  "content_scripts": [
+		{
+			"matches": ["https://gl-tptprod1.transperfect.com/*"],
+			"js": ["popup.js"]
+		}
+	]
+}

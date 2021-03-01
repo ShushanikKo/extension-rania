@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: local("/static/public/font/sanfranciscodisplay-medium-webfont.woff");
+}
+
+@font-face {
+    font-family: "SF Text";
+    font-weight: 500;
+    src: url("/font/SanFranciscoText-Medium.otf");
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "SF Text", sans-serif;
+}

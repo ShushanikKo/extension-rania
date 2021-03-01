@@ -1,0 +1,132 @@
+html, body {
+    width: 266px;
+    height: 222px;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    content: "";
+    position: absolute;
+}
+
+.main-content {
+    display: grid;
+    align-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    background-color: whitesmoke;
+}
+
+.main-content .item {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    /*background: transparent;*/
+    color: black;
+    border: 3px solid black;
+    border-radius: 44px;
+    /*padding: 0.8rem 2rem;*/
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    letter-spacing: 2px;
+}
+
+.button__wrapper {
+    display: inline-block;
+    position: relative;
+    width: 111px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-pulse button {
+    background: #cd0a0a;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.pulsing {
+    width: 99%;
+    height: 99%;
+    border-radius: 50px;
+    z-index: 1;
+    position: relative;
+}
+
+.pulsing:before, .pulsing:after {
+    width: 100%;
+    height: 100%;
+    border: inherit;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: burlywood;
+    border-radius: inherit;
+    animation: pulsing 2.5s linear infinite;
+}
+
+.pulsing:after {
+    animation: pulsing1 2.5s linear infinite;
+}
+
+@keyframes pulsing {
+    0% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+    20% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.2;
+        transform: scaleY(1.8) scaleX(1.4);
+    }
+    80% {
+        opacity: 0;
+        transform: scaleY(1.8) scaleX(1.4);
+    }
+    90% {
+        opacity: 0;
+        transform: scaleY(1) scaleX(1);
+    }
+}
+@keyframes pulsing1 {
+    0% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+    20% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.2;
+        transform: scaleY(1.3) scaleX(1.15);
+    }
+    80% {
+        opacity: 0;
+        transform: scaleY(1.3) scaleX(1.15);
+    }
+    90% {
+        opacity: 0;
+        transform: scaleY(1) scaleX(1);
+    }
+}
